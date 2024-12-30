@@ -1,0 +1,13 @@
+services:
+  rmq:
+    build: rmq
+    ports:
+      # HOST:CONTAINER
+      - 15672:15672
+    depends_on:
+      - http-auth-backend
+  http-auth-backend:
+    build: http-auth-backend
+    ports:
+      # HOST:CONTAINER
+      - 8000:8000
